@@ -1,12 +1,23 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
+import { MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        NavigationComponent
       ],
+      imports: [
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatListModule,
+        MatSidenavModule,
+        MatToolbarModule
+      ]
     }).compileComponents();
   }));
 
@@ -22,10 +33,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('daily-news-feed');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a .title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to daily-news-feed!');
+    expect(compiled.querySelector('.title').textContent).toContain('daily-news-feed');
   });
 });
