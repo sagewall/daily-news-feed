@@ -17,8 +17,9 @@
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <h1 class="title" *ngIf="activeSource">Top Headlines from {{activeSource.name}}</h1>
-    <h1 class="title" *ngIf="!activeSource">Top Headlines from All Sources</h1>
+    <h1 class="center no-margin" *ngIf="activeSource">Top Headlines from {{activeSource.name}}</h1>
+    <h1 class="center no-margin" *ngIf="!activeSource">Top Headlines from All Sources</h1>
+    <h3 class="center">Powered by NewsAPI.org</h3>
     <div fxLayout="row wrap">
       <mat-card class="card" *ngFor="let article of articles" fxLayout="column" fxLayoutAlign="space-between">
         <mat-card-title-group>
