@@ -19,20 +19,23 @@
   <mat-sidenav-content>
     <h1 class="title" *ngIf="activeSource">Top Headlines from {{activeSource.name}}</h1>
     <h1 class="title" *ngIf="!activeSource">Top Headlines from All Sources</h1>
-    <mat-card class="card" *ngFor="let article of articles">
-      <mat-card-header>
-        <mat-card-title>{{article.title}}</mat-card-title>
-        <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
-      </mat-card-header>
-      <img mat-card-image src={{article.urlToImage}} alt={{article.description}}>
-      <mat-card-content>
-        {{article.description}}
-      </mat-card-content>
-      <mat-card-actions>
-        <a mat-button href={{article.url}} target="_blank">
-          <mat-icon>visibility</mat-icon> More
-        </a>
-      </mat-card-actions>
-    </mat-card>
+    <div fxLayout="row wrap">
+      <mat-card class="card" *ngFor="let article of articles" fxLayout="column" fxLayoutAlign="space-between">
+        <mat-card-title-group>
+          <mat-card-title>{{article.title}}</mat-card-title>
+          <mat-card-subtitle>{{article.source.name}}</mat-card-subtitle>
+        </mat-card-title-group>
+        <img *ngIf="article.urlToImage && article.urlToImage.startsWith('https')" mat-card-image src={{article.urlToImage}}
+          alt={{article.description}}>
+        <mat-card-content>
+          {{article.description}}
+        </mat-card-content>
+        <mat-card-actions>
+          <a mat-button href={{article.url}} target="_blank">
+            <mat-icon>visibility</mat-icon> More
+          </a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
