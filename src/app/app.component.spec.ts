@@ -30,16 +30,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'daily-news-feed'`, () => {
+  it(`should have as title 'Daily News Feed'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('daily-news-feed');
+    expect(app.title).toEqual('Daily News Feed');
   });
 
   it('should render title in a .title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain('daily-news-feed');
+    expect(compiled.querySelector('.title').textContent).toContain('Daily News Feed');
   });
 });
