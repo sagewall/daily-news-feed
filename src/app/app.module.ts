@@ -7,12 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NewsFeedComponent
   ],
   imports: [
     BrowserModule,

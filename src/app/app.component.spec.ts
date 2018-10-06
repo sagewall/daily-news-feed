@@ -3,14 +3,14 @@ import { async, TestBed } from '@angular/core/testing';
 import { MatCardModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        NavigationComponent
+        NewsFeedComponent
       ],
       imports: [
         BrowserAnimationsModule,

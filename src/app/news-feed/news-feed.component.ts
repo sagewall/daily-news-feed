@@ -7,11 +7,11 @@ import { NewsService } from '../news.service';
 import { Source } from '../source';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.sass']
+  selector: 'app-news-feed',
+  templateUrl: './news-feed.component.html',
+  styleUrls: ['./news-feed.component.sass']
 })
-export class NavigationComponent implements OnInit {
+export class NewsFeedComponent implements OnInit {
 
   activeSource: Source;
   articles: Article[];
