@@ -1,6 +1,10 @@
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { async, TestBed } from '@angular/core/testing';
-import { MatCardModule, MatIconModule, MatListModule, MatSidenavModule, MatToolbarModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
@@ -8,10 +12,7 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        NewsFeedComponent
-      ],
+      declarations: [AppComponent, NewsFeedComponent],
       imports: [
         BrowserAnimationsModule,
         HttpClientTestingModule,
@@ -19,8 +20,8 @@ describe('AppComponent', () => {
         MatIconModule,
         MatListModule,
         MatSidenavModule,
-        MatToolbarModule
-      ]
+        MatToolbarModule,
+      ],
     }).compileComponents();
   }));
 
@@ -40,6 +41,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.title').textContent).toContain('Daily News Feed');
+    expect(compiled.querySelector('.title').textContent).toContain(
+      'Daily News Feed'
+    );
   });
 });

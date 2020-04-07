@@ -1,9 +1,14 @@
 export interface Source {
-  id: String;
-  name: String;
-  description: String;
-  url: String;
-  category: String;
-  language: String;
-  country: String;
+  id: string;
+  name: string;
+  description: string;
+  url: string;
+  category: string;
+  language: string;
+  country: string;
+}
+
+export interface SourceResponse {
+  status: string;
+  sources: Source[];
 }

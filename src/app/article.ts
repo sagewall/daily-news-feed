@@ -1,13 +1,19 @@
 export interface Article {
   source: {
-    id: String,
-    name: String
+    id: string;
+    name: string;
   };
-  author: String;
-  title: String;
-  description: String;
-  url: String;
-  urlToImage: String;
-  publishedAt: String;
-  content: String;
+  author: string;
+  title: string;
+  description: string;
+  url: string;
+  urlToImage: string;
+  publishedAt: string;
+  content: string;
+}
+
+export interface ArticleResponse {
+  status: string;
+  totalResults: number;
+  articles: Article[];
 }
