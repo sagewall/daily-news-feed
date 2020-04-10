@@ -58,7 +58,10 @@
       >
         <mat-card-title-group>
           <mat-card-title>{{ article.title }}</mat-card-title>
-          <mat-card-subtitle>{{ article.source.name }}</mat-card-subtitle>
+          <mat-card-subtitle
+            >{{ article.source.name }} -
+            {{ article.publishedAt | date: "short" }}</mat-card-subtitle
+          >
         </mat-card-title-group>
         <img
           *ngIf="article.urlToImage && article.urlToImage.startsWith('https')"
