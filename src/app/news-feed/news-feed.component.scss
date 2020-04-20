@@ -7,6 +7,10 @@
   margin: 0.25em;
 }
 
+.center {
+  text-align: center;
+}
+
 .fill-horizontal {
   width: 100%;
 }
@@ -31,12 +35,4 @@
 
 .sidenav .mat-toolbar {
   background: inherit;
-}
-
-.center {
-  text-align: center;
-}
-
-.toolbar {
-  height: 7%;
 }
