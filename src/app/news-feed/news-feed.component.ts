@@ -48,4 +48,9 @@ export class NewsFeedComponent implements OnInit {
       .subscribe((data: ArticleResponse) => (this.articles = data.articles));
     this.activeSource = null;
   }
+
+  onSearch(articles: Article[]) {
+    this.articles = articles;
+    this.activeSource = null;
+  }
 }

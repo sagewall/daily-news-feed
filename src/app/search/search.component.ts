@@ -1,5 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  filter,
+  switchMap,
+} from 'rxjs/operators';
+import { Article, ArticleResponse } from '../article';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-search',
@@ -7,10 +16,23 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search.component.scss'],
 })
 export class SearchComponent implements OnInit {
-
   searchFormControl = new FormControl('');
+  articleResponse: Observable<ArticleResponse>;
 
-  constructor() {}
+  @Output() articleEmitter = new EventEmitter<Article[]>();
 
-  ngOnInit(): void {}
+  constructor(private newsService: NewsService) {}
+
+  ngOnInit(): void {
+    this.articleResponse = this.searchFormControl.valueChanges.pipe(
+      filter((value) => value.length > 3),
+      debounceTime(300),
+      distinctUntilChanged(),
+      switchMap((value: string) => this.newsService.searchTopHeadlines(value))
+    );
+
+    this.articleResponse.subscribe((articleResponse) => {
+      this.articleEmitter.emit(articleResponse.articles);
+    });
+  }
 }
