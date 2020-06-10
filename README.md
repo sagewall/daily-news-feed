@@ -1,5 +1,7 @@
 # DailyNewsFeed
 
+Due to CORS restrictions imposed by NewsAPI.org on developer accounts this project can only be served from localhost.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Development server
